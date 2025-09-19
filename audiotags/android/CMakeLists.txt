@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 set(Version "1.4.5")
 set(LibPath "${CMAKE_CURRENT_SOURCE_DIR}/src/main/jniLibs")
 set(ArchivePath "${CMAKE_CURRENT_SOURCE_DIR}/android.tar.gz")
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-z,max-page-size=16384")
 
 if(NOT EXISTS ${ArchivePath})
   file(DOWNLOAD
